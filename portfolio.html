@@ -5,25 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chinmay Pendke | Python Django & Backend Engineer</title>
     
+    <!-- Open Graph Meta Tags for LinkedIn Preview -->
+    <meta property="og:title" content="Chinmay Pendke | Python Django & Backend Engineer">
+    <meta property="og:description" content="Explore my backend engineering projects, REST APIs, and verified credentials.">
+    <meta property="og:url" content="https://chinmayportfolio.vercel.app/">
+    <meta property="og:type" content="website">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom UI Enhancements -->
+    <!-- Custom UI & Animation Enhancements -->
     <style>
-        /* Glowing Accent Effects */
+        /* Glassmorphism Cards with Elevated Hover Glow */
         .glass-card {
             background: rgba(15, 23, 42, 0.65);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
         .glass-card:hover {
+            transform: translateY(-6px);
             border-color: rgba(45, 212, 191, 0.4);
-            box-shadow: 0 10px 30px -10px rgba(45, 212, 191, 0.2);
+            box-shadow: 0 16px 36px -10px rgba(45, 212, 191, 0.25);
         }
 
         /* Cursor Radial Glow Effect */
@@ -35,8 +43,8 @@
         /* Scroll Animation Transitions */
         .reveal-on-scroll {
             opacity: 0;
-            transform: translateY(24px);
-            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal-on-scroll.active {
@@ -51,10 +59,10 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .gradient-teal {
-            background: linear-gradient(135deg, #2dd4bf 0%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Nav Link Active State */
+        .nav-link.active-nav {
+            color: #2dd4bf;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -72,14 +80,14 @@
 
             <!-- Navigation Links -->
             <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-teal-400 transition">About</a>
-                <a href="#skills" class="hover:text-teal-400 transition">Skills</a>
-                <a href="#projects" class="hover:text-teal-400 transition">Projects</a>
-                <a href="#experience" class="hover:text-teal-400 transition">Experience</a>
-                <a href="#education" class="hover:text-teal-400 transition">Education</a>
+                <a href="#about" class="nav-link hover:text-teal-400 transition">About</a>
+                <a href="#skills" class="nav-link hover:text-teal-400 transition">Skills</a>
+                <a href="#projects" class="nav-link hover:text-teal-400 transition">Projects</a>
+                <a href="#experience" class="nav-link hover:text-teal-400 transition">Experience</a>
+                <a href="#education" class="nav-link hover:text-teal-400 transition">Education</a>
             </nav>
 
-            <button id="open-modal-btn" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 border border-teal-400/40 text-teal-400 rounded-lg text-sm font-medium hover:bg-teal-400/10 hover:border-teal-400 transition">
+            <button id="open-modal-btn" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 border border-teal-400/40 text-teal-400 rounded-lg text-sm font-medium hover:bg-teal-400/10 hover:border-teal-400 transition transform active:scale-95">
                 <i class="fa-solid fa-paper-plane text-xs"></i> Contact Me
             </button>
 
@@ -112,8 +120,9 @@
                 Chinmay Pendke.
             </h1>
             
-            <h2 class="text-2xl sm:text-4xl font-bold text-slate-400 mb-6">
-                Building robust APIs, microservices, & backend architectures.
+            <!-- Dynamic Typing Effect Target -->
+            <h2 class="text-2xl sm:text-4xl font-bold text-slate-400 mb-6 min-h-[48px]">
+                <span id="typed-subtitle"></span><span class="border-r-2 border-teal-400 animate-pulse ml-1">&nbsp;</span>
             </h2>
             
             <p class="max-w-2xl text-slate-400 text-lg leading-relaxed mb-8">
@@ -121,13 +130,13 @@
             </p>
             
             <div class="flex flex-wrap gap-4">
-                <a href="mailto:pendkechinmay@gmail.com" class="px-6 py-3 bg-teal-400 text-slate-950 font-semibold rounded-xl hover:bg-teal-300 shadow-lg shadow-teal-500/10 transition flex items-center gap-2">
+                <a href="mailto:pendkechinmay@gmail.com" class="px-6 py-3 bg-teal-400 text-slate-950 font-semibold rounded-xl hover:bg-teal-300 shadow-lg shadow-teal-500/10 transition transform hover:-translate-y-1 active:scale-95 flex items-center gap-2">
                     <i class="fa-solid fa-envelope"></i> Email Me
                 </a>
-                <a href="https://github.com/chinmay2023" target="_blank" class="px-6 py-3 bg-slate-900 border border-slate-800 rounded-xl font-medium text-slate-300 hover:border-teal-400/50 hover:bg-slate-800/80 transition flex items-center gap-2">
+                <a href="https://github.com/chinmay2023" target="_blank" class="px-6 py-3 bg-slate-900 border border-slate-800 rounded-xl font-medium text-slate-300 hover:border-teal-400/50 hover:bg-slate-800/80 transition transform hover:-translate-y-1 active:scale-95 flex items-center gap-2">
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
-                <a href="https://www.linkedin.com/in/chinmay-pendke-a99701247/" target="_blank" class="px-6 py-3 bg-slate-900 border border-slate-800 rounded-xl font-medium text-slate-300 hover:border-teal-400/50 hover:bg-slate-800/80 transition flex items-center gap-2">
+                <a href="https://www.linkedin.com/in/chinmay-pendke-a99701247/" target="_blank" class="px-6 py-3 bg-slate-900 border border-slate-800 rounded-xl font-medium text-slate-300 hover:border-teal-400/50 hover:bg-slate-800/80 transition transform hover:-translate-y-1 active:scale-95 flex items-center gap-2">
                     <i class="fa-brands fa-linkedin"></i> LinkedIn
                 </a>
             </div>
@@ -143,16 +152,16 @@
 
                 <!-- Interactive Filter Buttons -->
                 <div class="flex flex-wrap gap-2">
-                    <button class="filter-btn active-filter px-4 py-1.5 text-xs font-mono rounded-lg border border-teal-400 bg-teal-400/10 text-teal-400" data-filter="all">All</button>
-                    <button class="filter-btn px-4 py-1.5 text-xs font-mono rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700" data-filter="backend">Backend</button>
-                    <button class="filter-btn px-4 py-1.5 text-xs font-mono rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700" data-filter="database">Database & Security</button>
-                    <button class="filter-btn px-4 py-1.5 text-xs font-mono rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700" data-filter="tools">Frontend & Tools</button>
+                    <button class="filter-btn active-filter px-4 py-1.5 text-xs font-mono rounded-lg border border-teal-400 bg-teal-400/10 text-teal-400 transition" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-1.5 text-xs font-mono rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700 transition" data-filter="backend">Backend</button>
+                    <button class="filter-btn px-4 py-1.5 text-xs font-mono rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700 transition" data-filter="database">Database & Security</button>
+                    <button class="filter-btn px-4 py-1.5 text-xs font-mono rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700 transition" data-filter="tools">Frontend & Tools</button>
                 </div>
             </div>
 
             <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Backend -->
-                <div class="skill-card glass-card p-6 rounded-2xl transition duration-300" data-category="backend">
+                <div class="skill-card glass-card p-6 rounded-2xl" data-category="backend">
                     <div class="flex items-center gap-3 text-teal-400 mb-4">
                         <i class="fa-solid fa-server text-xl"></i>
                         <h3 class="font-semibold text-lg text-slate-100">Backend System</h3>
@@ -167,7 +176,7 @@
                 </div>
 
                 <!-- Database & Security -->
-                <div class="skill-card glass-card p-6 rounded-2xl transition duration-300" data-category="database">
+                <div class="skill-card glass-card p-6 rounded-2xl" data-category="database">
                     <div class="flex items-center gap-3 text-teal-400 mb-4">
                         <i class="fa-solid fa-shield-halved text-xl"></i>
                         <h3 class="font-semibold text-lg text-slate-100">Database & Security</h3>
@@ -182,7 +191,7 @@
                 </div>
 
                 <!-- Tools & Frontend -->
-                <div class="skill-card glass-card p-6 rounded-2xl transition duration-300" data-category="tools">
+                <div class="skill-card glass-card p-6 rounded-2xl" data-category="tools">
                     <div class="flex items-center gap-3 text-teal-400 mb-4">
                         <i class="fa-solid fa-cubes text-xl"></i>
                         <h3 class="font-semibold text-lg text-slate-100">Frontend & Tools</h3>
@@ -209,23 +218,23 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
                 <!-- Project 1: Attendance System -->
-                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition duration-300 flex flex-col justify-between">
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between items-center mb-4">
                             <span class="text-teal-400 font-mono text-xs px-2.5 py-1 bg-teal-950/60 rounded-md border border-teal-800/40">Tej Gyan Foundation</span>
                             <a href="https://github.com/chinmay2023" target="_blank" rel="noreferrer" title="GitHub Code" class="text-slate-400 hover:text-teal-400 transition">
-                                    <i class="fa-brands fa-github text-base"></i>
-                                </a>
+                                <i class="fa-brands fa-github text-base"></i>
+                            </a>
                         </div>
                         <h3 class="text-xl font-bold text-slate-100 mb-3">Face Detection Attendance System</h3>
                         <ul class="text-slate-400 text-sm leading-relaxed mb-6 space-y-2">
                             <li class="flex items-start gap-2">
                                 <i class="fa-solid fa-angle-right text-teal-400 mt-1"></i>
-                                <span>Architected real-time video processing pipeline using OpenCV & Django, reaching 95%+ facial identification accuracy during testing[cite: 1].</span>
+                                <span>Architected real-time video processing pipeline using OpenCV & Django, reaching 95%+ facial identification accuracy during testing.</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <i class="fa-solid fa-angle-right text-teal-400 mt-1"></i>
-                                <span>Designed automated PostgreSQL relational schema to record high-concurrency timestamp logs for 200+ daily entries[cite: 1].</span>
+                                <span>Designed automated PostgreSQL relational schema to record high-concurrency timestamp logs for 200+ daily entries.</span>
                             </li>
                         </ul>
                     </div>
@@ -235,23 +244,23 @@
                 </div>
 
                 <!-- Project 2: E-Commerce Microservices -->
-                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition duration-300 flex flex-col justify-between">
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between items-center mb-4">
                             <span class="text-teal-400 font-mono text-xs px-2.5 py-1 bg-teal-950/60 rounded-md border border-teal-800/40">Tej Gyan Foundation</span>
                             <a href="https://github.com/chinmay2023" target="_blank" rel="noreferrer" title="GitHub Code" class="text-slate-400 hover:text-teal-400 transition">
-                                    <i class="fa-brands fa-github text-base"></i>
-                                </a>
+                                <i class="fa-brands fa-github text-base"></i>
+                            </a>
                         </div>
                         <h3 class="text-xl font-bold text-slate-100 mb-3">E-Commerce Backend System</h3>
                         <ul class="text-slate-400 text-sm leading-relaxed mb-6 space-y-2">
                             <li class="flex items-start gap-2">
                                 <i class="fa-solid fa-angle-right text-teal-400 mt-1"></i>
-                                <span>Engineered complete REST API infrastructure for user accounts, product catalogs, and cart logic handling 50+ concurrent requests[cite: 1].</span>
+                                <span>Engineered complete REST API infrastructure for user accounts, product catalogs, and cart logic handling 50+ concurrent requests.</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <i class="fa-solid fa-angle-right text-teal-400 mt-1"></i>
-                                <span>Secured checkout pipelines with JWT token authentication pairs, reducing unauthorized route access to zero[cite: 1].</span>
+                                <span>Secured checkout pipelines with JWT token authentication pairs, reducing unauthorized route access to zero.</span>
                             </li>
                         </ul>
                     </div>
@@ -260,9 +269,8 @@
                     </div>
                 </div>
 
-               
                 <!-- Project 3: The C-Fitness Club -->
-                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition duration-300 flex flex-col justify-between">
+                <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
                     <div>
                         <div class="flex justify-between items-center mb-4">
                             <span class="text-teal-400 font-mono text-xs px-2.5 py-1 bg-teal-950/60 rounded-md border border-teal-800/40">BCCA Degree Final Project</span>
@@ -276,14 +284,14 @@
                             </div>
                         </div>
                         <h3 class="text-xl font-bold text-slate-100 mb-3">The C-Fitness Club</h3>
-                      <ul class="text-slate-400 text-sm leading-relaxed mb-6 space-y-2">
+                        <ul class="text-slate-400 text-sm leading-relaxed mb-6 space-y-2">
                             <li class="flex items-start gap-2">
                                 <i class="fa-solid fa-angle-right text-teal-400 mt-1"></i>
-                                <span>Developed a gym portal supporting 3+ membership tiers with dynamic workout tracking and user progress reporting[cite: 1].</span>
+                                <span>Developed a gym portal supporting 3+ membership tiers with dynamic workout tracking and user progress reporting.</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <i class="fa-solid fa-angle-right text-teal-400 mt-1"></i>
-                                <span>Integrated Tailwind CSS with Django ORM models to optimize UI queries, cutting initial page render times by 25%[cite: 1].</span>
+                                <span>Integrated Tailwind CSS with Django ORM models to optimize UI queries, cutting initial page render times by 25%.</span>
                             </li>
                         </ul>
                     </div>
@@ -359,36 +367,36 @@
                     <h2 class="text-2xl font-bold text-slate-100 mt-1 mb-6">Certifications</h2>
                     <div class="space-y-6">
 
-                <!-- Oracle Certification Card -->
-                <div class="glass-card p-6 rounded-2xl transition duration-300">
-                    <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-3">
-                        <div>
-                            <h3 class="font-bold text-slate-100 text-lg leading-snug">
-                                Oracle Cloud Infrastructure 2025 Foundations Associate
-                            </h3>
-                            <p class="text-slate-400 text-sm mt-1">Oracle University • ID: 103178604OCI25FNDCFA</p>
-                        </div>
-                        <span class="text-xs text-teal-400 font-mono bg-teal-950/80 px-3 py-1 border border-teal-800/60 rounded-full whitespace-nowrap shrink-0 self-start">
-                            Nov 15, 2025
-                        </span>
-                    </div>
-                    
-                    <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                        Validates foundational knowledge of cloud concepts, core OCI services, security, architecture, and cloud management.
-                    </p>
+                        <!-- Oracle Certification Card -->
+                        <div class="glass-card p-6 rounded-2xl">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-3">
+                                <div>
+                                    <h3 class="font-bold text-slate-100 text-lg leading-snug">
+                                        Oracle Cloud Infrastructure 2025 Foundations Associate
+                                    </h3>
+                                    <p class="text-slate-400 text-sm mt-1">Oracle University • ID: 103178604OCI25FNDCFA</p>
+                                </div>
+                                <span class="text-xs text-teal-400 font-mono bg-teal-950/80 px-3 py-1 border border-teal-800/60 rounded-full whitespace-nowrap shrink-0 self-start">
+                                    Nov 15, 2025
+                                </span>
+                            </div>
+                            
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                                Validates foundational knowledge of cloud concepts, core OCI services, security, architecture, and cloud management.
+                            </p>
 
-                    <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=0F23C318C2FCF0A0311B919CB6757052D6CD1B943EC43C8DF971986350DCE659" 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    class="inline-flex items-center gap-2 text-xs font-mono text-teal-400 hover:text-teal-300 transition group">
-                        <i class="fa-solid fa-certificate"></i> 
-                        <span class="underline">Verify Digital Badge</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
-                    </a>
-                </div>
+                            <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=0F23C318C2FCF0A0311B919CB6757052D6CD1B943EC43C8DF971986350DCE659" 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            class="inline-flex items-center gap-2 text-xs font-mono text-teal-400 hover:text-teal-300 transition group">
+                                <i class="fa-solid fa-certificate"></i> 
+                                <span class="underline">Verify Digital Badge</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                            </a>
+                        </div>
 
                         <!-- Meta Specialization -->
-                        <div class="glass-card p-6 rounded-2xl transition duration-300">
+                        <div class="glass-card p-6 rounded-2xl">
                             <div class="flex justify-between items-start mb-2">
                                 <div>
                                     <h3 class="font-bold text-slate-100 text-lg">Meta Front-End Development Specialization</h3>
@@ -400,7 +408,7 @@
                                 Comprehensive 7-course professional series covering modern web architecture, JavaScript ES6+, React ecosystem, version control, and UI/UX design.
                             </p>
 
-                            <!-- Individual Course Credentials with Direct Verification Links -->
+                            <!-- Individual Course Credentials -->
                             <div class="border-t border-slate-800/80 pt-4 mt-4 space-y-2.5">
                                 <p class="text-xs font-mono text-slate-400 mb-2">Completed Courses & Verification:</p>
                                 
@@ -465,7 +473,7 @@
             <p class="text-slate-400 text-sm mb-6">Click to copy details directly to your clipboard:</p>
             
             <div class="space-y-4">
-                <button id="copy-email" class="w-full text-left p-4 bg-slate-800/80 hover:bg-slate-800 rounded-xl border border-slate-700/60 flex justify-between items-center transition">
+                <button id="copy-email" class="w-full text-left p-4 bg-slate-800/80 hover:bg-slate-800 rounded-xl border border-slate-700/60 flex justify-between items-center transition transform active:scale-95">
                     <div>
                         <p class="text-xs text-teal-400 font-mono">Email</p>
                         <p class="text-sm font-semibold text-slate-200">pendkechinmay@gmail.com</p>
@@ -473,7 +481,7 @@
                     <i class="fa-regular fa-copy text-slate-400"></i>
                 </button>
 
-                <button id="copy-phone" class="w-full text-left p-4 bg-slate-800/80 hover:bg-slate-800 rounded-xl border border-slate-700/60 flex justify-between items-center transition">
+                <button id="copy-phone" class="w-full text-left p-4 bg-slate-800/80 hover:bg-slate-800 rounded-xl border border-slate-700/60 flex justify-between items-center transition transform active:scale-95">
                     <div>
                         <p class="text-xs text-teal-400 font-mono">Phone</p>
                         <p class="text-sm font-semibold text-slate-200">+91-7774999781</p>
@@ -489,14 +497,28 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            // 1. Mouse Follower Radial Glow Effect
+            // 1. Interactive Typing Animation
+            const typedTarget = document.getElementById('typed-subtitle');
+            const textToType = "Building robust APIs, microservices, & backend architectures.";
+            let charIndex = 0;
+
+            function typeWriter() {
+                if (charIndex < textToType.length) {
+                    typedTarget.textContent += textToType.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeWriter, 40);
+                }
+            }
+            setTimeout(typeWriter, 300);
+
+            // 2. Mouse Follower Radial Glow Effect
             const glow = document.getElementById('cursor-glow');
             window.addEventListener('mousemove', (e) => {
                 glow.style.setProperty('--x', `${e.clientX}px`);
                 glow.style.setProperty('--y', `${e.clientY}px`);
             });
 
-            // 2. Mobile Menu Toggle
+            // 3. Mobile Menu Toggle
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -509,19 +531,47 @@
                 link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
             });
 
-            // 3. Scroll Reveal Observer
+           // 4. Scroll Reveal Observer (Triggers Every Time You Scroll)
             const revealElements = document.querySelectorAll('.reveal-on-scroll');
             const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
+                        // Add animation when entering viewport
                         entry.target.classList.add('active');
+                    } else {
+                        // Remove active class when out of view so it re-animates on scroll
+                        entry.target.classList.remove('active');
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { 
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px" // Triggers slightly before element enters view
+            });
 
             revealElements.forEach(el => revealObserver.observe(el));
 
-            // 4. Skills Category Filter Logic
+            // 5. Active Navbar Link Highlighting on Scroll
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let currentSection = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 120;
+                    if (window.scrollY >= sectionTop) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active-nav');
+                    if (link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.add('active-nav');
+                    }
+                });
+            });
+
+            // 6. Skills Category Filter Logic
             const filterBtns = document.querySelectorAll('.filter-btn');
             const skillCards = document.querySelectorAll('.skill-card');
 
@@ -547,7 +597,7 @@
                 });
             });
 
-            // 5. Contact Modal Logic
+            // 7. Contact Modal Logic
             const modal = document.getElementById('contact-modal');
             const openModalBtn = document.getElementById('open-modal-btn');
             const closeModalBtn = document.getElementById('close-modal-btn');
@@ -568,7 +618,7 @@
                 if (e.target === modal) closeModal();
             });
 
-            // 6. Copy to Clipboard Functionality
+            // 8. Copy to Clipboard Functionality
             const toast = document.getElementById('copy-toast');
 
             const copyToClipboard = (text) => {
