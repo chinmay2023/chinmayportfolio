@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinmay Pendke | Python Django & Backend Engineer</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom UI Enhancements -->
+    <style>
+        /* Glowing Accent Effects */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        
+        .glass-card:hover {
+            border-color: rgba(45, 212, 191, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(45, 212, 191, 0.2);
+        }
+
+        /* Cursor Radial Glow Effect */
+        #cursor-glow {
+            pointer-events: none;
+            background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), rgba(20, 184, 166, 0.12), transparent 40%);
+        }
+
+        /* Scroll Animation Transitions */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Subtle Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #f8fafc 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-teal {
+            background: linear-gradient(135deg, #2dd4bf 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-teal-400 selection:text-slate-950 relative overflow-x-hidden">
+
+    <!-- Interactive Mouse Follower Glow -->
+    <div id="cursor-glow" class="fixed inset-0 z-0 transition-opacity duration-300"></div>
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800/60 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold font-mono text-teal-400 tracking-wider hover:opacity-80 transition">
+                Chinmay's Portfolio
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-teal-400 transition">About</a>
+                <a href="#skills" class="hover:text-teal-400 transition">Skills</a>
+                <a href="#projects" class="hover:text-teal-400 transition">Projects</a>
+                <a href="#experience" class="hover:text-teal-400 transition">Experience</a>
+                <a href="#education" class="hover:text-teal-400 transition">Education</a>
+            </nav>
+
+            <button id="open-modal-btn" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 border border-teal-400/40 text-teal-400 rounded-lg text-sm font-medium hover:bg-teal-400/10 hover:border-teal-400 transition">
+                <i class="fa-solid fa-paper-plane text-xs"></i> Contact Me
+            </button>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-6 py-4 space-y-3">
+            <a href="#about" class="block text-slate-300 hover:text-teal-400 mobile-link">About</a>
+            <a href="#skills" class="block text-slate-300 hover:text-teal-400 mobile-link">Skills</a>
+            <a href="#projects" class="block text-slate-300 hover:text-teal-400 mobile-link">Projects</a>
+            <a href="#experience" class="block text-slate-300 hover:text-teal-400 mobile-link">Experience</a>
+            <a href="#education" class="block text-slate-300 hover:text-teal-400 mobile-link">Education</a>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-6xl mx-auto px-6 pt-24">
+
+        <!-- Hero Section -->
+        <section id="about" class="min-h-[85vh] flex flex-col justify-center items-start reveal-on-scroll">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-950/60 border border-teal-800/50 text-teal-400 font-mono text-xs mb-6">
+                <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
+                Python Django & Backend Engineer
+            </div>
+            
+            <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight mb-4 gradient-text">
+                Chinmay Pendke.
+            </h1>
+            
+            <h2 class="text-2xl sm:text-4xl font-bold text-slate-400 mb-6">
+                Building robust APIs, microservices, & backend architectures.
+            </h2>
+            
+            <p class="max-w-2xl text-slate-400 text-lg leading-relaxed mb-8">
+               Python Django Developer with 8 months of backend internship experience building scalable RESTful APIs and optimized PostgreSQL architectures. Specialized in reducing API latency by 35% and enforcing zero-trust security with JWT and RBAC.
+            </p>
+            
+            <div class="flex flex-wrap gap-4">
+                <a href="mailto:pendkechinmay@gmail.com" class="px-6 py-3 bg-teal-400 text-slate-950 font-semibold rounded-xl hover:bg-teal-300 shadow-lg shadow-teal-500/10 transition flex items-center gap-2">
+                    <i class="fa-solid fa-envelope"></i> Email Me
+                </a>
+                <a href="https://github.com/chinmay2023" target="_blank" class="px-6 py-3 bg-slate-900 border border-slate-800 rounded-xl font-medium text-slate-300 hover:border-teal-400/50 hover:bg-slate-800/80 transition flex items-center gap-2">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/chinmay-pendke-a99701247/" target="_blank" class="px-6 py-3 bg-slate-900 border border-slate-800 rounded-xl font-medium text-slate-300 hover:border-teal-400/50 hover:bg-slate-800/80 transition flex items-center gap-2">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="py-20 border-t border-slate-800/80 reveal-on-scroll">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-4">
+                <div>
+                    <span class="text-teal-400 font-mono text-xs uppercase tracking-widest">Capabilities</span>
+                    <h2 class="text-3xl font-bold text-slate-100 mt-1">Tech Stack & Expertise</h2>
+                </div>
+
+                <!-- Interactive Filter Buttons -->
+                <div class="flex flex-wrap gap-2">
+                    <button class="filter-btn active-filter px-4 py-1.5 text-xs font-mono rounded-lg border border-teal-400 bg-teal-400/10 text-teal-400" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-1.5 text-xs font-mono rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700" data-filter="backend">Backend</button>
+                    <button class="filter-btn px-4 py-1.5 text-xs font-mono rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700" data-filter="database">Database & Security</button>
+                    <button class="filter-btn px-4 py-1.5 text-xs font-mono rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700" data-filter="tools">Frontend & Tools</button>
+                </div>
+            </div>
+
+            <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Backend -->
+                <div class="skill-card glass-card p-6 rounded-2xl transition duration-300" data-category="backend">
+                    <div class="flex items-center gap-3 text-teal-400 mb-4">
+                        <i class="fa-solid fa-server text-xl"></i>
+                        <h3 class="font-semibold text-lg text-slate-100">Backend System</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">Python</span>
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">Django</span>
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">Django REST Framework</span>
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">RESTful APIs</span>
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">WebSockets</span>
+                    </div>
+                </div>
+
+                <!-- Database & Security -->
+                <div class="skill-card glass-card p-6 rounded-2xl transition duration-300" data-category="database">
+                    <div class="flex items-center gap-3 text-teal-400 mb-4">
+                        <i class="fa-solid fa-shield-halved text-xl"></i>
+                        <h3 class="font-semibold text-lg text-slate-100">Database & Security</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">PostgreSQL</span>
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">SQLite</span>
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">Query Optimization</span>
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">JWT Auth</span>
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">RBAC</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Frontend -->
+                <div class="skill-card glass-card p-6 rounded-2xl transition duration-300" data-category="tools">
+                    <div class="flex items-center gap-3 text-teal-400 mb-4">
+                        <i class="fa-solid fa-cubes text-xl"></i>
+                        <h3 class="font-semibold text-lg text-slate-100">Frontend & Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">JavaScript ES6+</span>
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">Tailwind CSS</span>
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">OpenCV</span>
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">Docker</span>
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">Git & GitHub</span>
+                        <span class="bg-slate-800/80 text-slate-300 text-xs font-mono px-3 py-1.5 rounded-lg border border-slate-700/50">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 border-t border-slate-800/80 reveal-on-scroll">
+            <div class="mb-10">
+                <span class="text-teal-400 font-mono text-xs uppercase tracking-widest">Portfolio</span>
+                <h2 class="text-3xl font-bold text-slate-100 mt-1">Featured Work</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Project 1: Attendance System -->
+                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-teal-400 font-mono text-xs px-2.5 py-1 bg-teal-950/60 rounded-md border border-teal-800/40">Tej Gyan Foundation</span>
+                            <a href="https://github.com/chinmay2023" target="_blank" rel="noreferrer" title="GitHub Code" class="text-slate-400 hover:text-teal-400 transition">
+                                    <i class="fa-brands fa-github text-base"></i>
+                                </a>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-3">Face Detection Attendance System</h3>
+                        <ul class="text-slate-400 text-sm leading-relaxed mb-6 space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-angle-right text-teal-400 mt-1"></i>
+                                <span>Architected real-time video processing pipeline using OpenCV & Django, reaching 95%+ facial identification accuracy during testing[cite: 1].</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-angle-right text-teal-400 mt-1"></i>
+                                <span>Designed automated PostgreSQL relational schema to record high-concurrency timestamp logs for 200+ daily entries[cite: 1].</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2 font-mono text-xs text-teal-400 pt-4 border-t border-slate-800/60">
+                        <span>Python</span> • <span>Django</span> • <span>OpenCV</span> • <span>PostgreSQL</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: E-Commerce Microservices -->
+                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-teal-400 font-mono text-xs px-2.5 py-1 bg-teal-950/60 rounded-md border border-teal-800/40">Tej Gyan Foundation</span>
+                            <a href="https://github.com/chinmay2023" target="_blank" rel="noreferrer" title="GitHub Code" class="text-slate-400 hover:text-teal-400 transition">
+                                    <i class="fa-brands fa-github text-base"></i>
+                                </a>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-3">E-Commerce Backend System</h3>
+                        <ul class="text-slate-400 text-sm leading-relaxed mb-6 space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-angle-right text-teal-400 mt-1"></i>
+                                <span>Engineered complete REST API infrastructure for user accounts, product catalogs, and cart logic handling 50+ concurrent requests[cite: 1].</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-angle-right text-teal-400 mt-1"></i>
+                                <span>Secured checkout pipelines with JWT token authentication pairs, reducing unauthorized route access to zero[cite: 1].</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2 font-mono text-xs text-teal-400 pt-4 border-t border-slate-800/60">
+                        <span>DRF</span> • <span>PostgreSQL</span> • <span>JWT</span>
+                    </div>
+                </div>
+
+               
+                <!-- Project 3: The C-Fitness Club -->
+                <div class="glass-card p-6 rounded-2xl hover:-translate-y-2 transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-teal-400 font-mono text-xs px-2.5 py-1 bg-teal-950/60 rounded-md border border-teal-800/40">BCCA Degree Final Project</span>
+                            <div class="flex items-center gap-3">
+                                <a href="https://github.com/chinmay2023" target="_blank" rel="noreferrer" title="GitHub Code" class="text-slate-400 hover:text-teal-400 transition">
+                                    <i class="fa-brands fa-github text-base"></i>
+                                </a>
+                                <a href="https://the-c-fitness-club-habz.onrender.com/" target="_blank" rel="noreferrer" title="Live Site" class="text-slate-400 hover:text-teal-400 transition">
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-3">The C-Fitness Club</h3>
+                      <ul class="text-slate-400 text-sm leading-relaxed mb-6 space-y-2">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-angle-right text-teal-400 mt-1"></i>
+                                <span>Developed a gym portal supporting 3+ membership tiers with dynamic workout tracking and user progress reporting[cite: 1].</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-angle-right text-teal-400 mt-1"></i>
+                                <span>Integrated Tailwind CSS with Django ORM models to optimize UI queries, cutting initial page render times by 25%[cite: 1].</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2 font-mono text-xs text-teal-400 pt-4 border-t border-slate-800/60">
+                        <span>Django</span> • <span>Tailwind CSS</span> • <span>PostgreSQL</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+       <!-- Experience Section -->
+        <section id="experience" class="py-20 border-t border-slate-800/80 reveal-on-scroll">
+            <div class="mb-10">
+                <span class="text-teal-400 font-mono text-xs uppercase tracking-widest">Career History</span>
+                <h2 class="text-3xl font-bold text-slate-100 mt-1">Work Experience</h2>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
+                    <h3 class="text-2xl font-bold text-slate-100">Python Django Backend Intern</h3>
+                    <span class="font-mono text-xs text-teal-400 px-3 py-1 bg-teal-950/80 border border-teal-800/60 rounded-full whitespace-nowrap shrink-0">Jan 2025 – Aug 2025</span>
+                </div>
+                <p class="text-slate-400 font-medium mb-6">Tej Gyan Foundation</p>
+                <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-teal-400 mt-1"></i>
+                        <span>Engineered 15+ production-ready REST API endpoints using Django REST Framework (DRF) to support multi-role platform access and high-concurrency user requests.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-teal-400 mt-1"></i>
+                        <span>Implemented JSON Web Token (JWT) authentication and custom Role-Based Access Control (RBAC) middleware, securing 100% of protected API endpoints against unauthorized access.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-teal-400 mt-1"></i>
+                        <span>Optimized complex PostgreSQL ORM database queries and indexing strategies, successfully reducing execution latency by 30% during high-volume data operations.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-teal-400 mt-1"></i>
+                        <span>Architected computer vision pipelines using OpenCV integrated with Django backend services to process live video streams with 95%+ facial recognition accuracy.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-teal-400 mt-1"></i>
+                        <span>Collaborated on end-to-end API deployment, environment management, and database migrations to ensure reliable uptime across production microservices.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section id="education" class="py-20 border-t border-slate-800/80 reveal-on-scroll">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div>
+                    <span class="text-teal-400 font-mono text-xs uppercase tracking-widest">Academic</span>
+                    <h2 class="text-2xl font-bold text-slate-100 mt-1 mb-6">Education</h2>
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 rounded-2xl">
+                            <h3 class="font-bold text-slate-100">Master of Computer Applications (MCA)</h3>
+                            <p class="text-slate-400 text-sm">Wainganga College of Engineering, Nagpur</p>
+                            <span class="text-xs text-teal-400 font-mono mt-2 block">2023 – 2026 (Final Semester Result Awaited)</span>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl">
+                            <h3 class="font-bold text-slate-100">BCCA (Computer Applications)</h3>
+                            <p class="text-slate-400 text-sm">Indraprashta College, Wardha</p>
+                            <span class="text-xs text-teal-400 font-mono mt-2 block">2020 – 2023 | CGPA: 7.24 / 10.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications Section -->
+                <div>
+                    <span class="text-teal-400 font-mono text-xs uppercase tracking-widest">Verified Credentials</span>
+                    <h2 class="text-2xl font-bold text-slate-100 mt-1 mb-6">Certifications</h2>
+                    <div class="space-y-6">
+
+                <!-- Oracle Certification Card -->
+                <div class="glass-card p-6 rounded-2xl transition duration-300">
+                    <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-3">
+                        <div>
+                            <h3 class="font-bold text-slate-100 text-lg leading-snug">
+                                Oracle Cloud Infrastructure 2025 Foundations Associate
+                            </h3>
+                            <p class="text-slate-400 text-sm mt-1">Oracle University • ID: 103178604OCI25FNDCFA</p>
+                        </div>
+                        <span class="text-xs text-teal-400 font-mono bg-teal-950/80 px-3 py-1 border border-teal-800/60 rounded-full whitespace-nowrap shrink-0 self-start">
+                            Nov 15, 2025
+                        </span>
+                    </div>
+                    
+                    <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                        Validates foundational knowledge of cloud concepts, core OCI services, security, architecture, and cloud management.
+                    </p>
+
+                    <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=0F23C318C2FCF0A0311B919CB6757052D6CD1B943EC43C8DF971986350DCE659" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    class="inline-flex items-center gap-2 text-xs font-mono text-teal-400 hover:text-teal-300 transition group">
+                        <i class="fa-solid fa-certificate"></i> 
+                        <span class="underline">Verify Digital Badge</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                    </a>
+                </div>
+
+                        <!-- Meta Specialization -->
+                        <div class="glass-card p-6 rounded-2xl transition duration-300">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="font-bold text-slate-100 text-lg">Meta Front-End Development Specialization</h3>
+                                    <p class="text-slate-400 text-sm">Authorized by Meta via Coursera</p>
+                                </div>
+                                <span class="text-xs text-teal-400 font-mono bg-teal-950/80 px-3 py-1 border border-teal-800/60 rounded-full whitespace-nowrap shrink-0">Completed 2023</span>
+                            </div>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                                Comprehensive 7-course professional series covering modern web architecture, JavaScript ES6+, React ecosystem, version control, and UI/UX design.
+                            </p>
+
+                            <!-- Individual Course Credentials with Direct Verification Links -->
+                            <div class="border-t border-slate-800/80 pt-4 mt-4 space-y-2.5">
+                                <p class="text-xs font-mono text-slate-400 mb-2">Completed Courses & Verification:</p>
+                                
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                                    <a href="https://coursera.org/verify/5Z4KDJFBUWXY" target="_blank" rel="noreferrer" class="p-2 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-teal-400/40 rounded-lg flex justify-between items-center transition group">
+                                        <span class="text-slate-300 group-hover:text-teal-400">Introduction to Front-End</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500 group-hover:text-teal-400"></i>
+                                    </a>
+
+                                    <a href="https://coursera.org/verify/YHJ7UMXUKK37" target="_blank" rel="noreferrer" class="p-2 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-teal-400/40 rounded-lg flex justify-between items-center transition group">
+                                        <span class="text-slate-300 group-hover:text-teal-400">Programming with JavaScript</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500 group-hover:text-teal-400"></i>
+                                    </a>
+
+                                    <a href="https://coursera.org/verify/QEQMBDZ2XNQN" target="_blank" rel="noreferrer" class="p-2 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-teal-400/40 rounded-lg flex justify-between items-center transition group">
+                                        <span class="text-slate-300 group-hover:text-teal-400">Version Control (Git/GitHub)</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500 group-hover:text-teal-400"></i>
+                                    </a>
+
+                                    <a href="https://coursera.org/verify/CKBWQT4LC4RP" target="_blank" rel="noreferrer" class="p-2 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-teal-400/40 rounded-lg flex justify-between items-center transition group">
+                                        <span class="text-slate-300 group-hover:text-teal-400">HTML & CSS in Depth</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500 group-hover:text-teal-400"></i>
+                                    </a>
+
+                                    <a href="https://coursera.org/verify/PLXHLMTKSTA7" target="_blank" rel="noreferrer" class="p-2 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-teal-400/40 rounded-lg flex justify-between items-center transition group">
+                                        <span class="text-slate-300 group-hover:text-teal-400">React Basics</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500 group-hover:text-teal-400"></i>
+                                    </a>
+
+                                    <a href="https://coursera.org/verify/CY2R8YNZMWZ9" target="_blank" rel="noreferrer" class="p-2 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-teal-400/40 rounded-lg flex justify-between items-center transition group">
+                                        <span class="text-slate-300 group-hover:text-teal-400">Advanced React</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500 group-hover:text-teal-400"></i>
+                                    </a>
+
+                                    <a href="https://coursera.org/verify/8P45LM5K9BTN" target="_blank" rel="noreferrer" class="p-2 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-teal-400/40 rounded-lg flex justify-between items-center transition group">
+                                        <span class="text-slate-300 group-hover:text-teal-400">Principles of UX/UI Design</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500 group-hover:text-teal-400"></i>
+                                    </a>
+
+                                    <a href="https://coursera.org/verify/N6UKSCSRWM3H" target="_blank" rel="noreferrer" class="p-2 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-teal-400/40 rounded-lg flex justify-between items-center transition group">
+                                        <span class="text-slate-300 group-hover:text-teal-400">Front-End Capstone Project</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500 group-hover:text-teal-400"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal Popup for Direct Contact -->
+    <div id="contact-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl max-w-md w-full mx-4 relative shadow-2xl">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 text-xl transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-slate-100 mb-2">Get in Touch</h3>
+            <p class="text-slate-400 text-sm mb-6">Click to copy details directly to your clipboard:</p>
+            
+            <div class="space-y-4">
+                <button id="copy-email" class="w-full text-left p-4 bg-slate-800/80 hover:bg-slate-800 rounded-xl border border-slate-700/60 flex justify-between items-center transition">
+                    <div>
+                        <p class="text-xs text-teal-400 font-mono">Email</p>
+                        <p class="text-sm font-semibold text-slate-200">pendkechinmay@gmail.com</p>
+                    </div>
+                    <i class="fa-regular fa-copy text-slate-400"></i>
+                </button>
+
+                <button id="copy-phone" class="w-full text-left p-4 bg-slate-800/80 hover:bg-slate-800 rounded-xl border border-slate-700/60 flex justify-between items-center transition">
+                    <div>
+                        <p class="text-xs text-teal-400 font-mono">Phone</p>
+                        <p class="text-sm font-semibold text-slate-200">+91-7774999781</p>
+                    </div>
+                    <i class="fa-regular fa-copy text-slate-400"></i>
+                </button>
+            </div>
+            <p id="copy-toast" class="text-xs text-teal-400 font-mono text-center mt-4 hidden">Copied to clipboard!</p>
+        </div>
+    </div>
+
+    <!-- Integrated JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Mouse Follower Radial Glow Effect
+            const glow = document.getElementById('cursor-glow');
+            window.addEventListener('mousemove', (e) => {
+                glow.style.setProperty('--x', `${e.clientX}px`);
+                glow.style.setProperty('--y', `${e.clientY}px`);
+            });
+
+            // 2. Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+
+            // 3. Scroll Reveal Observer
+            const revealElements = document.querySelectorAll('.reveal-on-scroll');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // 4. Skills Category Filter Logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const skillCards = document.querySelectorAll('.skill-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active-filter', 'border-teal-400', 'bg-teal-400/10', 'text-teal-400');
+                        b.classList.add('border-slate-800', 'bg-slate-900', 'text-slate-400');
+                    });
+                    
+                    btn.classList.add('active-filter', 'border-teal-400', 'bg-teal-400/10', 'text-teal-400');
+                    btn.classList.remove('border-slate-800', 'bg-slate-900', 'text-slate-400');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    skillCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // 5. Contact Modal Logic
+            const modal = document.getElementById('contact-modal');
+            const openModalBtn = document.getElementById('open-modal-btn');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+
+            const openModal = () => {
+                modal.classList.remove('hidden');
+                setTimeout(() => modal.classList.remove('opacity-0'), 10);
+            };
+
+            const closeModal = () => {
+                modal.classList.add('opacity-0');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            };
+
+            openModalBtn.addEventListener('click', openModal);
+            closeModalBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+
+            // 6. Copy to Clipboard Functionality
+            const toast = document.getElementById('copy-toast');
+
+            const copyToClipboard = (text) => {
+                navigator.clipboard.writeText(text).then(() => {
+                    toast.classList.remove('hidden');
+                    setTimeout(() => toast.classList.add('hidden'), 2000);
+                });
+            };
+
+            document.getElementById('copy-email').addEventListener('click', () => copyToClipboard('pendkechinmay@gmail.com'));
+            document.getElementById('copy-phone').addEventListener('click', () => copyToClipboard('+91-7774999781'));
+        });
+    </script>
+</body>
+</html>
