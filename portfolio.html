@@ -64,6 +64,25 @@
             color: #2dd4bf;
             font-weight: 600;
         }
+
+        /* Profile Image Animation Effects */
+        @keyframes profileFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        @keyframes borderSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .animate-profile-float {
+            animation: profileFloat 5s ease-in-out infinite;
+        }
+
+        .animate-border-spin {
+            animation: borderSpin 8s linear infinite;
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-teal-400 selection:text-slate-950 relative overflow-x-hidden">
@@ -109,37 +128,53 @@
 
     <main class="relative z-10 max-w-6xl mx-auto px-6 pt-24">
 
-        <!-- Hero Section -->
-        <section id="about" class="min-h-[85vh] flex flex-col justify-center items-start reveal-on-scroll">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-950/60 border border-teal-800/50 text-teal-400 font-mono text-xs mb-6">
-                <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
-                Python Django & Backend Engineer
+        <!-- Hero Section with Animated Profile Photo -->
+        <section id="about" class="min-h-[85vh] flex flex-col-reverse md:flex-row justify-between items-center gap-12 reveal-on-scroll py-12">
+            
+            <!-- Left Side: Hero Text -->
+            <div class="flex-1 flex flex-col items-start">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-950/60 border border-teal-800/50 text-teal-400 font-mono text-xs mb-6">
+                    <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
+                    Python Django & Backend Engineer
+                </div>
+                
+                <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight mb-4 gradient-text">
+                    Chinmay Pendke.
+                </h1>
+                
+                <!-- Dynamic Typing Effect Target -->
+                <h2 class="text-2xl sm:text-4xl font-bold text-slate-400 mb-6 min-h-[48px]">
+                    <span id="typed-subtitle"></span><span class="border-r-2 border-teal-400 animate-pulse ml-1">&nbsp;</span>
+                </h2>
+                
+                <p class="max-w-2xl text-slate-400 text-lg leading-relaxed mb-8">
+                   Python Django Developer with 8 months of backend internship experience building scalable RESTful APIs and optimized PostgreSQL architectures. Specialized in reducing API latency by 35% and enforcing zero-trust security with JWT and RBAC.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="mailto:pendkechinmay@gmail.com" class="px-6 py-3 bg-teal-400 text-slate-950 font-semibold rounded-xl hover:bg-teal-300 shadow-lg shadow-teal-500/10 transition transform hover:-translate-y-1 active:scale-95 flex items-center gap-2">
+                        <i class="fa-solid fa-envelope"></i> Email Me
+                    </a>
+                    <a href="https://github.com/chinmay2023" target="_blank" class="px-6 py-3 bg-slate-900 border border-slate-800 rounded-xl font-medium text-slate-300 hover:border-teal-400/50 hover:bg-slate-800/80 transition transform hover:-translate-y-1 active:scale-95 flex items-center gap-2">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/chinmay-pendke-a99701247/" target="_blank" class="px-6 py-3 bg-slate-900 border border-slate-800 rounded-xl font-medium text-slate-300 hover:border-teal-400/50 hover:bg-slate-800/80 transition transform hover:-translate-y-1 active:scale-95 flex items-center gap-2">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
             </div>
-            
-            <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight mb-4 gradient-text">
-                Chinmay Pendke.
-            </h1>
-            
-            <!-- Dynamic Typing Effect Target -->
-            <h2 class="text-2xl sm:text-4xl font-bold text-slate-400 mb-6 min-h-[48px]">
-                <span id="typed-subtitle"></span><span class="border-r-2 border-teal-400 animate-pulse ml-1">&nbsp;</span>
-            </h2>
-            
-            <p class="max-w-2xl text-slate-400 text-lg leading-relaxed mb-8">
-               Python Django Developer with 8 months of backend internship experience building scalable RESTful APIs and optimized PostgreSQL architectures. Specialized in reducing API latency by 35% and enforcing zero-trust security with JWT and RBAC.
-            </p>
-            
-            <div class="flex flex-wrap gap-4">
-                <a href="mailto:pendkechinmay@gmail.com" class="px-6 py-3 bg-teal-400 text-slate-950 font-semibold rounded-xl hover:bg-teal-300 shadow-lg shadow-teal-500/10 transition transform hover:-translate-y-1 active:scale-95 flex items-center gap-2">
-                    <i class="fa-solid fa-envelope"></i> Email Me
-                </a>
-                <a href="https://github.com/chinmay2023" target="_blank" class="px-6 py-3 bg-slate-900 border border-slate-800 rounded-xl font-medium text-slate-300 hover:border-teal-400/50 hover:bg-slate-800/80 transition transform hover:-translate-y-1 active:scale-95 flex items-center gap-2">
-                    <i class="fa-brands fa-github"></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/chinmay-pendke-a99701247/" target="_blank" class="px-6 py-3 bg-slate-900 border border-slate-800 rounded-xl font-medium text-slate-300 hover:border-teal-400/50 hover:bg-slate-800/80 transition transform hover:-translate-y-1 active:scale-95 flex items-center gap-2">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn
-                </a>
+
+            <!-- Right Side: Animated Profile Picture Frame -->
+            <div class="relative group animate-profile-float shrink-0">
+                <!-- Rotating Animated Gradient Ring -->
+                <div class="absolute -inset-1.5 bg-gradient-to-r from-teal-400 via-cyan-500 to-indigo-500 rounded-full blur-md opacity-70 group-hover:opacity-100 transition duration-500 animate-border-spin"></div>
+                
+                <!-- Inner Glow Frame -->
+                <div class="relative p-1 bg-slate-950 rounded-full">
+                    <img src="profile.jpg.jpeg" alt="Chinmay Pendke" class="w-52 h-52 sm:w-64 sm:h-64 object-cover rounded-full border-2 border-teal-400/50 shadow-2xl transition-transform duration-500 group-hover:scale-105">
+                </div>
             </div>
+
         </section>
 
         <!-- Technical Skills Section -->
@@ -531,21 +566,19 @@
                 link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
             });
 
-           // 4. Scroll Reveal Observer (Triggers Every Time You Scroll)
+            // 4. Scroll Reveal Observer (Triggers Every Time You Scroll)
             const revealElements = document.querySelectorAll('.reveal-on-scroll');
             const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Add animation when entering viewport
                         entry.target.classList.add('active');
                     } else {
-                        // Remove active class when out of view so it re-animates on scroll
                         entry.target.classList.remove('active');
                     }
                 });
             }, { 
                 threshold: 0.15,
-                rootMargin: "0px 0px -50px 0px" // Triggers slightly before element enters view
+                rootMargin: "0px 0px -50px 0px"
             });
 
             revealElements.forEach(el => revealObserver.observe(el));
